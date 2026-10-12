@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lone Barbershop — Agende direto com o barbeiro</title>
+  <meta name="description" content="Corte, barba, degradê e pacotes com o barbeiro do Lone Barbershop. Veja o portfólio e agende seu horário online em menos de um minuto.">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta property="og:title" content="Lone Barbershop — Seu corte, seu horário, direto comigo">
+  <meta property="og:description" content="Agende online corte, barba, degradê e pacotes.">
+  <meta property="og:image" content="/assets/logo.png">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/assets/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#top" class="brand" aria-label="Lone Barbershop — início">
+        <picture class="logo-wrap logo-wrap--sm">
+          <source srcset="/assets/logo-sm.webp" type="image/webp">
+          <img src="/assets/logo-sm.png" alt="Logo Lone Barbershop" width="118" height="200" class="logo-img" data-logo-fallback>
+        </picture>
+        <span class="brand__name">Lone<span>Barbershop</span></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#depoimentos">Clientes</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn btn--ghost btn--sm" id="accountBtn" type="button">Entrar</button>
+        <a href="#agendar" class="btn btn--primary btn--sm hide-mobile">Agendar</a>
+        <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <picture class="logo-wrap logo-wrap--hero reveal">
+          <source srcset="/assets/logo.webp 1x, /assets/logo@2x.webp 2x" type="image/webp">
+          <img src="/assets/logo.png" alt="Lone Barbershop" width="427" height="726" class="logo-img" fetchpriority="high" data-logo-fallback>
+        </picture>
+        <p class="eyebrow reveal" style="--d:.1s">Lone Barbershop · Barbeiro autônomo</p>
+        <h1 class="hero__title reveal" style="--d:.18s">Seu corte, seu horário,<br><em>direto comigo.</em></h1>
+        <p class="hero__lead reveal" style="--d:.26s">Sem fila, sem recepção, sem intermediário. Você escolhe o horário livre na minha agenda, confirma em menos de um minuto e recebe tudo por e-mail.</p>
+        <div class="hero__cta reveal" style="--d:.34s">
+          <a href="#agendar" class="btn btn--primary btn--lg">Agendar agora <span aria-hidden="true">→</span></a>
+          <a href="#portfolio" class="btn btn--ghost btn--lg">Ver meus cortes</a>
+        </div>
+        <ul class="hero__stats reveal" style="--d:.42s">
+          <li><strong>8+</strong><span>anos na tesoura</span></li>
+          <li><strong>4,9★</strong><span>nota dos clientes</span></li>
+          <li><strong id="nextFree">—</strong><span>próximo horário livre</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= SERVIÇOS ================= -->
+    <section class="section container" id="servicos">
+      <header class="section__head section__head--split">
+        <div>
+          <p class="eyebrow reveal">Serviços</p>
+          <h2 class="reveal">O que eu faço,<br>e quanto custa.</h2>
+        </div>
+        <p class="section__lead reveal">Preço fechado, sem surpresa no fim. Todo atendimento inclui lavagem, finalização e aquele ajuste que só quem conhece seu cabelo faz.</p>
+      </header>
+      <div class="services" id="servicesGrid" aria-live="polite">
+        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+    </section>
+
+    <!-- ================= PORTFÓLIO (largura total) ================= -->
+    <section class="section section--full portfolio-sec" id="portfolio">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <p class="eyebrow reveal">Portfólio</p>
+            <h2 class="reveal">O trabalho fala<br>antes de mim.</h2>
+          </div>
+          <p class="section__lead reveal">Cortes e barbas reais da minha cadeira. Toque em qualquer foto pra ver em tela cheia — e se curtir o estilo, agende com ele direto.</p>
+        </header>
+        <div class="filters reveal" role="tablist" aria-label="Filtrar portfólio" id="portfolioFilters"></div>
+      </div>
+      <div class="portfolio" id="portfolioGrid"></div>
+    </section>
+
+    <!-- ================= PROCESSO ================= -->
+    <section class="section container" id="processo">
+      <header class="section__head">
+        <p class="eyebrow reveal">Como funciona</p>
+        <h2 class="reveal">Do clique à cadeira<br>em 4 passos.</h2>
+      </header>
+      <ol class="steps">
+        <li class="step reveal"><span class="step__n">01</span><h3>Escolha o horário</h3><p>Você vê só os horários realmente livres na minha agenda, atualizados em tempo real.</p></li>
+        <li class="step reveal" style="--d:.08s"><span class="step__n">02</span><h3>Confirme seus dados</h3><p>Nome, e-mail, telefone e o serviço. Leva menos de um minuto.</p></li>
+        <li class="step reveal" style="--d:.16s"><span class="step__n">03</span><h3>Receba no e-mail</h3><p>Confirmação na hora e um lembrete uma hora antes. Precisa desmarcar? Cancela pelo site.</p></li>
+        <li class="step reveal" style="--d:.24s"><span class="step__n">04</span><h3>Senta e relaxa</h3><p>Chega no horário, sem esperar. A cadeira é sua — o resto é comigo.</p></li>
+      </ol>
+    </section>
+
+    <!-- ================= AGENDAMENTO (largura total) ================= -->
+    <section class="section section--full booking-sec" id="agendar">
+      <div class="container booking">
+        <div class="booking__intro">
+          <p class="eyebrow reveal">Agenda</p>
+          <h2 class="reveal">Escolha seu<br>horário.</h2>
+          <p class="section__lead reveal">Horários em <span id="tzLabel">horário de Brasília</span>. O horário fica reservado assim que você confirma.</p>
+          <ol class="booking__progress reveal" aria-label="Etapas">
+            <li class="is-active" data-progress="1"><span>1</span>Horário</li>
+            <li data-progress="2"><span>2</span>Seus dados</li>
+            <li data-progress="3"><span>3</span>Confirmado</li>
+          </ol>
+          <button class="btn btn--ghost btn--sm reveal" id="myBookingsBtn" type="button">Meus agendamentos</button>
+        </div>
+
+        <div class="booking__panel glass reveal" id="bookingPanel">
+          <!-- Etapa 1 -->
+          <div class="bstep is-active" data-step="1">
+            <div class="days-head">
+              <h3>Etapa 1 · Escolha um horário livre</h3>
+              <div class="days-nav">
+                <button class="icon-btn" id="daysPrev" aria-label="Dias anteriores">‹</button>
+                <button class="icon-btn" id="daysNext" aria-label="Próximos dias">›</button>
+              </div>
+            </div>
+            <div class="days" id="daysStrip" role="listbox" aria-label="Dias"></div>
+            <div class="slots" id="slotsGrid" role="listbox" aria-label="Horários" aria-live="polite"></div>
+            <div class="bstep__foot">
+              <p class="muted" id="slotPicked">Nenhum horário selecionado.</p>
+              <button class="btn btn--primary" id="toStep2" disabled>Continuar <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+
+          <!-- Etapa 2 -->
+          <form class="bstep" data-step="2" id="bookingForm" novalidate>
+            <div class="days-head">
+              <h3>Etapa 2 · Seus dados</h3>
+              <button type="button" class="link" id="backTo1">← Trocar horário</button>
+            </div>
+            <div class="picked-chip" id="pickedChip"></div>
+            <div class="fields">
+              <label class="field"><span>Nome completo</span><input name="name" autocomplete="name" required minlength="2" placeholder="Seu nome"></label>
+              <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required placeholder="voce@email.com"></label>
+              <label class="field"><span>Telefone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="(11) 99999-9999"></label>
+              <label class="field"><span>Serviço</span><select name="service" required id="bookingService"></select></label>
+            </div>
+            <p class="form-error" id="bookingError" role="alert"></p>
+            <div class="bstep__foot">
+              <p class="muted" id="bookingTotal"></p>
+              <button class="btn btn--primary" type="submit" id="confirmBtn">Confirmar agendamento</button>
+            </div>
+          </form>
+
+          <!-- Etapa 3 -->
+          <div class="bstep bstep--done" data-step="3">
+            <div class="done-icon" aria-hidden="true">✓</div>
+            <h3>Horário reservado!</h3>
+            <p class="muted" id="doneText"></p>
+            <dl class="summary" id="doneSummary"></dl>
+            <div class="bstep__foot bstep__foot--center">
+              <button class="btn btn--ghost" id="bookAnother">Agendar outro</button>
+              <button class="btn btn--primary" id="seeBookings">Ver meus agendamentos</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DEPOIMENTOS ================= -->
+    <section class="section container" id="depoimentos">
+      <header class="section__head section__head--split">
+        <div>
+          <p class="eyebrow reveal">Clientes</p>
+          <h2 class="reveal">Quem senta,<br>volta.</h2>
+        </div>
+        <p class="section__lead reveal">Boa parte da agenda é de cliente fixo. Olha o que eles dizem.</p>
+      </header>
+      <div class="testimonials" id="testimonialsGrid"></div>
+    </section>
+
+    <!-- ================= CTA FINAL + CONTATO ================= -->
+    <section class="section section--full cta-sec" id="contato">
+      <div class="container cta">
+        <div class="cta__text">
+          <p class="eyebrow reveal">Bora?</p>
+          <h2 class="reveal">Sua próxima versão<br>começa na cadeira.</h2>
+          <p class="section__lead reveal">Prefere tirar uma dúvida antes? Manda uma mensagem — eu mesmo respondo. Ou vai direto pra agenda.</p>
+          <a href="#agendar" class="btn btn--primary btn--lg reveal">Agendar agora <span aria-hidden="true">→</span></a>
+        </div>
+        <form class="card contact reveal" id="contactForm" novalidate>
+          <h3>Fale comigo</h3>
+          <label class="field"><span>Nome</span><input name="name" autocomplete="name" required minlength="2" placeholder="Seu nome"></label>
+          <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required placeholder="voce@email.com"></label>
+          <label class="field"><span>Tipo de serviço</span><select name="service" id="contactService"></select></label>
+          <label class="field"><span>Mensagem</span><textarea name="message" rows="4" required minlength="2" placeholder="Conta o que você precisa"></textarea></label>
+          <p class="form-error" role="alert"></p>
+          <button class="btn btn--primary btn--block" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="footer__brand" aria-label="Voltar ao topo">
+        <picture class="logo-wrap logo-wrap--footer">
+          <source srcset="/assets/logo-sm.webp" type="image/webp">
+          <img src="/assets/logo-sm.png" alt="Lone Barbershop" width="118" height="200" class="logo-img" loading="lazy" data-logo-fallback>
+        </picture>
+        <span class="brand__name">Lone<span>Barbershop</span></span>
+      </a>
+      <div class="footer__cols">
+        <div><h4>Atendimento</h4><p>Ter a Sáb · 9h às 19h</p><p id="footerAddress">Endereço da barbearia</p></div>
+        <div><h4>Navegação</h4><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#agendar">Agendar</a></div>
+        <div><h4>Contato</h4><a href="#contato">Enviar mensagem</a><a href="https://instagram.com/" target="_blank" rel="noopener" id="footerInsta">Instagram</a></div>
+      </div>
+    </div>
+    <p class="footer__copy container">© <span id="year"></span> Lone Barbershop. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Botão flutuante (mobile) -->
+  <a href="#agendar" class="fab glass" id="fab">Agendar agora</a>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Prévia do trabalho" hidden>
+    <button class="lightbox__close icon-btn" data-close aria-label="Fechar">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev icon-btn" id="lbPrev" aria-label="Anterior">‹</button>
+    <figure class="lightbox__figure">
+      <img id="lbImg" alt="">
+      <figcaption class="lightbox__cap glass">
+        <div><span class="tag" id="lbTag"></span><h3 id="lbTitle"></h3><p id="lbDesc"></p></div>
+        <button class="btn btn--primary btn--sm" id="lbBook">Quero esse estilo</button>
+      </figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next icon-btn" id="lbNext" aria-label="Próximo">›</button>
+    <p class="lightbox__count" id="lbCount"></p>
+  </div>
+
+  <!-- ================= MODAL AUTH / MEUS AGENDAMENTOS ================= -->
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card glass">
+      <button class="modal__close icon-btn" data-close aria-label="Fechar">✕</button>
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab is-active" data-tab="login" aria-selected="true">Entrar</button>
+        <button role="tab" class="tab" data-tab="signup" aria-selected="false">Criar conta</button>
+      </div>
+      <h3 id="authTitle">Entre para confirmar seu horário</h3>
+      <form id="authForm" novalidate>
+        <label class="field" data-only="signup" hidden><span>Nome</span><input name="name" autocomplete="name" placeholder="Seu nome"></label>
+        <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required placeholder="voce@email.com"></label>
+        <label class="field"><span>Senha</span><input name="password" type="password" autocomplete="current-password" required minlength="6" placeholder="mínimo 6 caracteres"></label>
+        <p class="form-error" role="alert"></p>
+        <button class="btn btn--primary btn--block" type="submit">Entrar</button>
+        <button class="link link--center" type="button" id="forgotBtn" data-only="login">Esqueci minha senha</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="bookingsModal" role="dialog" aria-modal="true" aria-labelledby="bookingsTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card modal__card--wide glass">
+      <button class="modal__close icon-btn" data-close aria-label="Fechar">✕</button>
+      <h3 id="bookingsTitle">Meus agendamentos</h3>
+      <p class="muted" id="bookingsUser"></p>
+      <div class="my-bookings" id="myBookingsList"></div>
+      <div class="bstep__foot">
+        <button class="link" id="logoutBtn">Sair da conta</button>
+        <a href="#agendar" class="btn btn--primary btn--sm" data-close>Novo agendamento</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toasts" aria-live="polite"></div>
+  <div class="demo-badge glass" id="demoBadge" hidden>Modo demonstração — configure o Supabase para dados reais</div>
+
+  <script src="/js/config.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

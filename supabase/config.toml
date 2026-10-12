@@ -1,0 +1,7 @@
+# Trecho de configuração das Edge Functions (o restante é gerado por `supabase init`).
+[functions.send-confirmation]
+verify_jwt = true
+
+[functions.send-reminders]
+# chamada pelo pg_cron com o header x-cron-secret, sem JWT de usuário
+verify_jwt = false
